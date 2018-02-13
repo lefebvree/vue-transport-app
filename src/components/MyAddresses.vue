@@ -2,17 +2,24 @@
   <div id="myaddresses">
     <h1>Mes adresses</h1>
     <address-list :addresses="addresses"></address-list>
+    <add-address v-on:add-address="addAddress"></add-address>
   </div>
 </template>
 
 <script>
 import AddressList from '@/components/AddressList'
+import AddAddress from '@/components/AddAddress'
 
 export default {
   name: 'MyAddresses',
   components: {
-    // Reference to the AddressList component
-    AddressList
+    AddressList,
+    AddAddress
+  },
+  methods: {
+    addAddress: function (newAddress) {
+      this.addresses.push(newAddress)
+    }
   },
   data () {
     return {
