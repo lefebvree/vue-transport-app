@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view class="container"/>
   </div>
 </template>
 
@@ -28,6 +28,6 @@ h1, h2 {
 .container {
   display: inline-block;
   width: 95%;
-  max-width: 400px;
+  max-width: 600px;
 }
 </style>

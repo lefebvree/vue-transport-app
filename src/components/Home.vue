@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <h1>Lyon Transit</h1>
     <section>
       <input type="text" placeholder="Départ"/>
