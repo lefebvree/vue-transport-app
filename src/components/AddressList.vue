@@ -1,24 +1,22 @@
 <template>
   <div>
     <div class='' v-for="address in addresses" :key="address.name">
-      <div class='content'>
-        <div class='header'>
-          {{ address }}
-        </div>
-        <div class='meta'>
-
-        </div>
-      </div>
+      <address-item :address="address"></address-item>
     </div>
   </div>
 </template>
 
 <script type = "text/javascript" >
+import AddressItem from './AddressItem'
+
 export default {
   props: ['addresses'],
   data () {
     return {
     }
+  },
+  components: {
+    AddressItem
   }
 }
 </script>
