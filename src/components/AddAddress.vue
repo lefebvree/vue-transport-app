@@ -16,11 +16,9 @@ export default {
   },
   methods: {
     createAddress: function () {
-      const name = this.name
-      const address = this.address
-      this.$emit('add-address', {
-        name: name,
-        address: address,
+      this.$store.dispatch('addAddress', {
+        name: this.name,
+        address: this.address,
         favorite: true
       })
       this.clear()

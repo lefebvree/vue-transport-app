@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>{{ addressesCountText }}</p>
     <div class='' v-for="address in addresses" :key="address.name">
       <address-item :address="address"></address-item>
     </div>
@@ -10,9 +11,19 @@
 import AddressItem from './AddressItem'
 
 export default {
-  props: ['addresses'],
   data () {
     return {
+    }
+  },
+  computed: {
+    addresses: function () {
+      return this.$store.getters.addresses
+    },
+    addressesCount: function () {
+      return this.addresses.length
+    },
+    addressesCountText: function () {
+      return this.addressesCount + ' address' + (this.addressesCount > 1 ? 'es' : '')
     }
   },
   components: {

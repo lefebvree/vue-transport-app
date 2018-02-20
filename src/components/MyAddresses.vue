@@ -1,8 +1,9 @@
 <template>
   <div id="myaddresses">
+    <router-link to="/" class="home-link">Accueil</router-link>
     <h1>Mes adresses</h1>
-    <address-list :addresses="addresses"></address-list>
-    <add-address v-on:add-address="addAddress"></add-address>
+    <address-list></address-list>
+    <add-address></add-address>
   </div>
 </template>
 
@@ -15,32 +16,6 @@ export default {
   components: {
     AddressList,
     AddAddress
-  },
-  methods: {
-    addAddress: function (newAddress) {
-      this.addresses.push(newAddress)
-    }
-  },
-  data () {
-    return {
-      addresses: [{
-        name: 'Maison',
-        address: '34 rue Bolivar, 69005, Lyon',
-        favorite: true
-      }, {
-        name: 'Travail',
-        address: '43, bd du 11 novembre 1918, 69622 Villeurbanne cedex',
-        favorite: true
-      }, {
-        name: 'Nautibus',
-        address: '43, bd du 11 novembre 1918, 69622 Villeurbanne cedex',
-        favorite: false
-      }, {
-        name: 'AML',
-        address: '43, bd du 11 novembre 1918, 69622 Villeurbanne cedex',
-        favorite: false
-      }]
-    }
   }
 }
 </script>

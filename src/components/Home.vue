@@ -14,21 +14,23 @@
     <hr />
     <section>
       <h2><router-link to="/myaddresses">Mes Adresses</router-link></h2>
-      <ul>
-        <li>Maison</li>
-        <li>Travail</li>
-      </ul>
+      <address-list></address-list>
       <router-link to="/myaddresses">Ajouter</router-link>
     </section>
   </div>
 </template>
 
 <script>
+import AddressList from '@/components/AddressList'
+
 export default {
   name: 'Home',
   data () {
     return {
     }
+  },
+  components: {
+    AddressList
   }
 }
 </script>
