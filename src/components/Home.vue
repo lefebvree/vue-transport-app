@@ -1,22 +1,42 @@
 <template>
   <div>
-    <h1>Lyon Transit</h1>
-    <section>
-      <input type="text" placeholder="Départ"/>
-      <input type="text" placeholder="Arrivée"/>
-      <button>Rechercher</button>
-      <br />
-    </section>
-    <hr />
-    <section>
-      <h2><router-link to="/aroundme">Autour de moi</router-link></h2>
-    </section>
-    <hr />
-    <section>
-      <h2><router-link to="/myaddresses">Mes Adresses</router-link></h2>
-      <address-list></address-list>
-      <router-link to="/myaddresses">Ajouter</router-link>
-    </section>
+    <v-layout row wrap>
+      <v-flex md5 xs12><v-text-field label="Departure"/></v-flex>
+
+      <v-flex hidden-sm-and-down xs2 mt-3 text-xs-center>
+        <v-icon large color="primary">flight_takeoff</v-icon>
+      </v-flex>
+
+      <v-flex md5 xs12><v-text-field label="Arrival"/></v-flex>
+    </v-layout>
+    <v-layout row justify-center align-center>
+      <v-btn color="primary" large>
+        <v-icon class="mr-3">search</v-icon>
+        SEARCH
+      </v-btn>
+    </v-layout>
+
+    <v-divider class="my-3"></v-divider>
+
+    <v-layout row justify-center align-center>
+      <v-flex xs12 md8>
+        <v-layout reverse row justify-space-around wrap>
+          <v-btn large round outline color="indigo" to="/aroundme">
+            <v-icon class="mr-3">place</v-icon>
+            <span>Around Me</span>
+          </v-btn>
+          <v-btn large round outline color="red" to="/myaddresses">
+            <v-icon class="mr-3">favorite</v-icon>
+            <span>My Addresses</span>
+          </v-btn>
+        </v-layout>
+
+        <address-list></address-list>
+        <div>
+          <v-btn outline color="primary" to="/myaddresses" class="ma-2">Ajouter</v-btn>
+        </div>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -34,19 +54,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-section {
-  padding: 15px 0;
-}
-input {
-  display: block;
-  margin: 10px 0;
-  width: 100%;
-  font-size: larger;
-}
-button {
-  float: right;
-  font-size: larger;
-}
-</style>

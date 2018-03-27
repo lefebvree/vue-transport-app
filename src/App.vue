@@ -1,33 +1,60 @@
 <template>
   <div id="app">
-    <router-view class="container"/>
+    <v-app id="navapp">
+      <v-toolbar flat extended color="primary">
+      </v-toolbar>
+      <v-layout row pb-2 class="mb-5">
+        <v-flex xs8 offset-xs2  class="mb-3">
+          <v-card class="card--flex-toolbar">
+            <v-toolbar card prominent>
+              <v-toolbar-title>
+                <v-breadcrumbs>
+                  <v-icon slot="divider">chevron_right</v-icon>
+                  <v-breadcrumbs-item to="/">Lyon Navigation</v-breadcrumbs-item>
+                  <v-breadcrumbs-item v-if="currentPage">{{ currentPage }}</v-breadcrumbs-item>
+                </v-breadcrumbs>
+              </v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon>more_vert</v-icon>
+              </v-btn>
+            </v-toolbar>
+            <v-divider></v-divider>
+            <router-view class="pa-4"></router-view>
+          </v-card>
+        </v-flex>
+      </v-layout>
+      <bottom-nav-bar></bottom-nav-bar>
+    </v-app>
   </div>
 </template>
 
 <script>
+import BottomNavBar from '@/components/BottomNavBar'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: { BottomNavBar },
+  computed: {
+    currentPage: function () {
+      const pagesName = {
+        aroundme: 'Around Me',
+        myaddresses: 'My Addresses'
+      }
+
+      let page = this.$route.path.substring(1)
+
+      return page ? pagesName[page] : false
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Helvetica, Arial, Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  color: #2c3e50;
-  margin-top: 60px;
+a {
+  text-decoration: none;
 }
-
-h1, h2 {
-  font-weight: normal;
-}
-
-.container {
-  display: inline-block;
-  width: 95%;
-  max-width: 600px;
+.card--flex-toolbar {
+  margin-top: -64px;
 }
 </style>

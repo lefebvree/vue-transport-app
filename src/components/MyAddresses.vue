@@ -1,8 +1,7 @@
 <template>
-  <div id="myaddresses">
-    <router-link to="/" class="home-link">Accueil</router-link>
-    <h1>Mes adresses</h1>
+  <div>
     <address-list></address-list>
+    <v-divider class="my-4"></v-divider>
     <add-address></add-address>
   </div>
 </template>

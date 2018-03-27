@@ -22,7 +22,7 @@ const mutations = {
     state.addresses.push(address)
   },
   DELETE_ADDRESS (state, address) {
-    state.addresses.splice(address, 1)
+    state.addresses.splice(state.addresses.indexOf(address), 1)
   }
 }
 
