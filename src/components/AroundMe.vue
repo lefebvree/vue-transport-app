@@ -6,10 +6,5 @@
 
 <script>
 export default {
-  name: 'AroundMe',
-  data () {
-    return {
-    }
-  }
 }
 </script>

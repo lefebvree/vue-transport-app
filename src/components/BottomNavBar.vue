@@ -23,10 +23,14 @@
 
 <script>
 export default {
-  name: 'BottomNavBar',
   computed: {
-    activePage: function () {
-      return this.$route.path.substring(1) || 'home'
+    activePage: {
+      get: function () {
+        return this.$route.path.substring(1) || 'home'
+      },
+      set: function (value) {
+        // No need to set activePage
+      }
     }
   }
 }

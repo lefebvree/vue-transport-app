@@ -1,20 +1,8 @@
 <template>
   <div>
-    <v-layout row wrap>
-      <v-flex md5 xs12><v-text-field label="Departure"/></v-flex>
+    <navigation-search></navigation-search>
 
-      <v-flex hidden-sm-and-down xs2 mt-3 text-xs-center>
-        <v-icon large color="primary">flight_takeoff</v-icon>
-      </v-flex>
-
-      <v-flex md5 xs12><v-text-field label="Arrival"/></v-flex>
-    </v-layout>
-    <v-layout row justify-center align-center>
-      <v-btn color="primary" large>
-        <v-icon class="mr-3">search</v-icon>
-        SEARCH
-      </v-btn>
-    </v-layout>
+    <journeys-list></journeys-list>
 
     <v-divider class="my-3"></v-divider>
 
@@ -41,16 +29,15 @@
 </template>
 
 <script>
-import AddressList from '@/components/AddressList'
+import AddressList from '@/components/addresses/AddressList'
+import NavigationSearch from '@/components/navigation/NavigationSearch'
+import JourneysList from '@/components/navigation/JourneysList'
 
 export default {
-  name: 'Home',
-  data () {
-    return {
-    }
-  },
   components: {
-    AddressList
+    AddressList,
+    NavigationSearch,
+    JourneysList
   }
 }
 </script>

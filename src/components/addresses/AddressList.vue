@@ -18,13 +18,9 @@
 </template>
 
 <script type = "text/javascript" >
-import AddressItem from './AddressItem'
+import AddressItem from '@/components/addresses/AddressItem'
 
 export default {
-  data () {
-    return {
-    }
-  },
   computed: {
     addresses: function () {
       return this.$store.getters.addresses

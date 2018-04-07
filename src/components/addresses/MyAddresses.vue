@@ -7,11 +7,10 @@
 </template>
 
 <script>
-import AddressList from '@/components/AddressList'
-import AddAddress from '@/components/AddAddress'
+import AddressList from '@/components/addresses/AddressList'
+import AddAddress from '@/components/addresses/AddAddress'
 
 export default {
-  name: 'MyAddresses',
   components: {
     AddressList,
     AddAddress
