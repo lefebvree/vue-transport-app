@@ -18,6 +18,12 @@
           <v-icon>favorite</v-icon>
         </v-btn>
       </router-link>
+      <router-link to="/lines">
+        <v-btn flat color="teal" value="lines">
+          <span>TCL Lines</span>
+          <v-icon>departure_board</v-icon>
+        </v-btn>
+      </router-link>
     </v-bottom-nav>
 </template>
 

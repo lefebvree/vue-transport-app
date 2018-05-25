@@ -37,3 +37,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .avatar {
+    font-weight: bold;
+  }
+</style>

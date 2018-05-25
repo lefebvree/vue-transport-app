@@ -15,14 +15,16 @@ const state = {
     departure: null,
     arrival: null,
     journeys: []
-  }
+  },
+  navitia_api_key: '25d05741-12ac-4d62-be88-2d82645310b9'
 }
 
 const getters = {
   addresses: state => state.addresses,
   departure: state => state.route.departure,
   arrival: state => state.route.arrival,
-  journeys: state => state.route.journeys
+  journeys: state => state.route.journeys,
+  api_key: state => state.navitia_api_key
 }
 
 const mutations = {

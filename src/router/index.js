@@ -6,6 +6,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import MyAddresses from '@/components/addresses/MyAddresses'
 import AroundMe from '@/components/AroundMe'
+import Lines from '@/components/lines/Lines'
 
 import 'vuetify/dist/vuetify.min.css'
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/myaddresses',
       name: 'MyAddresses',
       component: MyAddresses
+    },
+    {
+      path: '/lines',
+      name: 'TCL Lines',
+      component: Lines
     }
   ]
 })

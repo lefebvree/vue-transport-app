@@ -39,7 +39,8 @@ export default {
     currentPage: function () {
       const pagesName = {
         aroundme: 'Around Me',
-        myaddresses: 'My Addresses'
+        myaddresses: 'My Addresses',
+        lines: 'TCL Lines'
       }
 
       let page = this.$route.path.substring(1)

@@ -30,7 +30,7 @@ export default {
 
       if (from && to) {
         const NAVITIA_URL = `http://api.navitia.io/v1/coverage/fr-se/journeys?from=${encodeURI(from)}&to=${encodeURI(to)}`
-        const NAVITIA_API_KEY = '25d05741-12ac-4d62-be88-2d82645310b9'
+        const NAVITIA_API_KEY = this.$store.getters.api_key
 
         let request = new Request(NAVITIA_URL)
 

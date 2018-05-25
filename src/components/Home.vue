@@ -7,8 +7,12 @@
     <v-divider class="my-3"></v-divider>
 
     <v-layout row justify-center align-center>
-      <v-flex xs12 md8>
+      <v-flex xs12 md9>
         <v-layout reverse row justify-space-around wrap>
+          <v-btn large round outline color="teal" to="/lines">
+            <v-icon class="mr-3">departure_board</v-icon>
+            <span>TCL Lines</span>
+          </v-btn>
           <v-btn large round outline color="indigo" to="/aroundme">
             <v-icon class="mr-3">place</v-icon>
             <span>Around Me</span>
