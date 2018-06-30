@@ -4,7 +4,7 @@
       <v-toolbar flat extended color="primary">
       </v-toolbar>
       <v-layout row pb-2 class="mb-5">
-        <v-flex xs8 offset-xs2  class="mb-3">
+        <v-flex xs12 md8 offset-md2 mb-3>
           <v-card class="card--flex-toolbar">
             <v-toolbar card prominent>
               <v-toolbar-title>
@@ -40,7 +40,8 @@ export default {
       const pagesName = {
         aroundme: 'Around Me',
         myaddresses: 'My Addresses',
-        lines: 'TCL Lines'
+        lines: 'TCL Lines',
+        liveview: 'Live View'
       }
 
       let page = this.$route.path.substring(1)

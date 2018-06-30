@@ -3,11 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#1976D2">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link
+      href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      rel="preload"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+    >
     <title>Application Vue Navigation</title>
+    <style>body,html{padding:0;margin:0}.app-shell-toolbar{height:128px;width:100%;background-color:#1976d2;margin-bottom:5em}.app-shell-loading{display:flex;align-items:center;justify-content:center}.app-shell-spinner{-webkit-animation:rotator 1.4s linear infinite;animation:rotator 1.4s linear infinite}@-webkit-keyframes rotator{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}}@keyframes rotator{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}}.app-shell-spinner-path{stroke-dasharray:187;stroke-dashoffset:0;-webkit-transform-origin:center;transform-origin:center;stroke:#4285F4;-webkit-animation:dash 1.4s ease-in-out infinite;animation:dash 1.4s ease-in-out infinite,colors 5.6s ease-in-out infinite}@-webkit-keyframes dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;-webkit-transform:rotate(135deg);transform:rotate(135deg)}100%{stroke-dashoffset:187;-webkit-transform:rotate(450deg);transform:rotate(450deg)}}@keyframes dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;-webkit-transform:rotate(135deg);transform:rotate(135deg)}100%{stroke-dashoffset:187;-webkit-transform:rotate(450deg);transform:rotate(450deg)}}</style>
   </head>
   <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <div id="app">
+      <div class="app-shell-toolbar"></div>
+      <noscript>
+        <h3 style="color: #673ab7; font-family: 'Roboto', Helvetica, Arial, sans-serif; margin: 2rem;">
+          Sorry, but app is not available without javascript
+        </h3>
+      </noscript>
+      <div class="app-shell-loading">
+        <svg class="app-shell-spinner" width="49px" height="49px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+          <circle class="app-shell-spinner-path" fill="none" stroke-width="4" stroke-linecap="round" cx="25" cy="25" r="22"></circle>
+        </svg>
+      </div>
+    </div>
+    <script>
+      if (navigator.serviceWorker.controller) {
+        console.log('[PWA Builder] active service worker found, no need to register')
+      } else {
+        //Register the ServiceWorker
+        navigator.serviceWorker.register('./pwabuilder-sw.js', {
+          scope: './'
+        }).then(function(reg) {
+          console.log('Service worker has been registered for scope:' + reg.scope);
+        });
+      }
+    </script>
   </body>
 </html>

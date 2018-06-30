@@ -12,8 +12,8 @@ const state = {
     }
   ],
   route: {
-    departure: null,
-    arrival: null,
+    departure: {},
+    arrival: {},
     journeys: []
   },
   navitia_api_key: '25d05741-12ac-4d62-be88-2d82645310b9'
@@ -21,8 +21,13 @@ const state = {
 
 const getters = {
   addresses: state => state.addresses,
+
   departure: state => state.route.departure,
+  departureLocation: state => state.route.departure.id || state.route.departure.position,
+
   arrival: state => state.route.arrival,
+  arrivalLocation: state => state.route.arrival.id || state.route.arrival.position,
+
   journeys: state => state.route.journeys,
   api_key: state => state.navitia_api_key
 }

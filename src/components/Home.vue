@@ -7,8 +7,16 @@
     <v-divider class="my-3"></v-divider>
 
     <v-layout row justify-center align-center>
-      <v-flex xs12 md9>
+      <v-flex xs12>
         <v-layout reverse row justify-space-around wrap>
+          <v-btn large round outline color="brown" to="/modernizr">
+            <v-icon class="mr-3">device_unknown</v-icon>
+            <span>Device Sensors</span>
+          </v-btn>
+          <v-btn large round outline color="blue-grey" to="/liveview">
+            <v-icon class="mr-3">near_me</v-icon>
+            <span>Live View</span>
+          </v-btn>
           <v-btn large round outline color="teal" to="/lines">
             <v-icon class="mr-3">departure_board</v-icon>
             <span>TCL Lines</span>

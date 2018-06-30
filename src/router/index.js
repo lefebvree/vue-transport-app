@@ -7,6 +7,8 @@ import Home from '@/components/Home'
 import MyAddresses from '@/components/addresses/MyAddresses'
 import AroundMe from '@/components/AroundMe'
 import Lines from '@/components/lines/Lines'
+import LiveView from '@/components/arliveview/LiveView'
+import ModernizrView from '@/components/modernizr/ModernizrView'
 
 import 'vuetify/dist/vuetify.min.css'
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/lines',
       name: 'TCL Lines',
       component: Lines
+    },
+    {
+      path: '/liveview',
+      name: 'Live View',
+      component: LiveView
+    },
+    {
+      path: '/modernizr',
+      name: 'Modernizr',
+      component: ModernizrView
     }
   ]
 })
